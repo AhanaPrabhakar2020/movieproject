@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>addmovie</title>
+	<link rel="stylesheet" type="text/css" href="{% static "movieapp/css/addmovie.css" %}">
+</head>
+<style type="text/css">
+	body{
+		background-repeat: no-repeat;
+	background-image: url("https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+	background-size: cover;
+	}
+	label{
+		color: white;
+	}
+	p{
+		margin: 20px;
+		padding: 10px;
+	}
+	h1{
+		color: white;
+	}
+</style>
+<body>
+	<div class="container" align="center">
+		<form method="POST">
+			<h1>Add Movie Details</h1>
+			{{ movie_form.as_p }}
+			{% csrf_token %}
+			<input type="submit" value="Add">	
+					
+		</form><br>
+		<a href="/homepage"><input type="submit" value="Back"></a>
+	</div>
+</body>
+</html>
